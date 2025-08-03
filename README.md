@@ -55,3 +55,7 @@ This project uses multiple MCP servers:
 - **Research Server(internal)**: Handles arXiv paper searches and analysis
 - **Filesystem Server(external)**: File system operations
 - **Fetch Server(external)**: Web content fetching
+
+## Try out yourself
+
+Example prompt: fetch deeplearning.ai and find an interesting term to search papers around and then summarize your findings and write(use filesystem mcp) them to a file called test_1.txt
