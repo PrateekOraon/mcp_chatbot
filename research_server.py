@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(__file__)
 PAPER_DIR = os.path.join(BASE_DIR, "papers")
 
 # Initialize FastMCP server
-mcp = FastMCP("research")
+mcp = FastMCP("research", host="0.0.0.0", port=str(os.environ.get("PORT", 8000)))
 
 @mcp.tool()
 def search_papers(topic: str, max_results: int = 5) -> List[str]:
@@ -189,6 +189,4 @@ def generate_search_prompt(topic: str, num_papers: int = 5) -> str:
 
 if __name__ == "__main__":
     # Initialize and run the server
-    import os
-    os.environ["PORT"] = str(os.environ.get("PORT", 8000))
     mcp.run(transport="sse")
